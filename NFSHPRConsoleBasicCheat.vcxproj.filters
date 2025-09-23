@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source">
+      <UniqueIdentifier>{a97cb290-398a-4380-97bb-6c0eaf6b89e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Infinite Boost">
+      <UniqueIdentifier>{b3f123b0-f4f2-41ab-befa-179277734265}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="RacerHacks">
+      <UniqueIdentifier>{6e88dda1-267b-4aa2-87d9-e962fd7d969a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Infinite Boost\InfiniteBoost.h">
+      <Filter>Infinite Boost</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Includes.h">
+      <Filter>Source</Filter>
+    </ClInclude>
+    <ClInclude Include="RacerHacks\RacerHacks.h">
+      <Filter>RacerHacks</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Infinite Boost\InfinteBoost.cpp">
+      <Filter>Infinite Boost</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="RacerHacks\RacerHacks.cpp">
+      <Filter>RacerHacks</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
