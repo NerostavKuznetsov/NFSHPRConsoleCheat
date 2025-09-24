@@ -26,10 +26,11 @@ _  /|  / _  __/   ____/ /_  __  / _  ____/_  _, _/   _/_____/     / /___  / /_/ 
     std::wcout << "\n\n";
     std::wcout << "                                                                                                                                                                               By: Nerostav Kuznetsov\n";
     COLOR_RED()
-    std::wcout << "[!] Steam:   https://steamcommunity.com/profiles/76561198304587027   \n";
-    std::wcout << "[!] Insta:   https://instagram.com/nrstv_kuznetsov                    \n";
-    std::wcout << "[!] Github:  https://github.com/NerostavKuznetsov?????????             \n";
-    std::wcout << "[!] Youtub:  https://youtube.com/@Kuzntsv-666                           \n";
+    std::wcout << L"[!] CTRL + CLICK to follow the link                                                        \n";
+    std::wcout << L"[!] Steam:   https://steamcommunity.com/profiles/76561198304587027                          \n";
+    std::wcout << L"[!] Insta:   https://instagram.com/nrstv_kuznetsov                                           \n";
+    std::wcout << L"[!] Github:  https://github.com/NerostavKuznetsov/NFSHPRConsoleBasicCheat                     \n";
+    std::wcout << L"[!] Youtub:  https://youtube.com/@Kuzntsv-666                                                  \n";
     COLOR_GREEN()
     std::wcout << L" \n";
     std::wcout << L"╔═══════════════════════════════════════╗\n";
@@ -38,8 +39,8 @@ _  /|  / _  __/   ____/ /_  __  / _  ____/_  _, _/   _/_____/     / /___  / /_/ 
     std::wcout << L"║ 1  ➡️  Infinite Boost                 ║\n";
     std::wcout << L"║ 2  ➡️  Racer Hacks                    ║\n";
     std::wcout << L"║ 3  ➡️  Cop Hacks                      ║\n";
-    std::wcout << L"║ 4  ➡️  God Mode                       ║\n";
-    std::wcout << L"║ 5  ➡️  No Cooldown Racer/Cop Hacks    ║\n";
+    std::wcout << L"║ 4  ➡️  *                              ║\n";
+    std::wcout << L"║ 5  ➡️  *                              ║\n";
     std::wcout << L"║ 6  ➡️  *                              ║\n";
     std::wcout << L"║ 7  ➡️  *                              ║\n";
     std::wcout << L"║ 8  ➡️  *                              ║\n";
@@ -134,7 +135,7 @@ int main()
     {
         ShowMenu();
         COLOR_RED()
-        std::wcout << L"\n[!] Base address 0x" << std::hex << modBaseAddr << L"\n";
+        std::wcout << L"\n[!] Base address: 0x" << std::hex << modBaseAddr << L"\n";
         std::wcout << L"[!] ProcessID: " << std::dec << PID << L"\n";
         COLOR_YELLOW()
         std::wcout << L"[?] Enter your option (1-9): ";
