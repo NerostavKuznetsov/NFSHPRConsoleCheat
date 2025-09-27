@@ -1,14 +1,16 @@
 ﻿/*
+* 
 * NFSHPR - NK Cheats / NFSHPR - Console Basic Cheat
 *
 * |-------------------------------------|
 * | [!] Status/Aviso/Info - RED         |
-* | [*] Aplicado/Menu/ASCIIArt - GREEN  |
+* | [*] Aplicado/Menu/ASCIIArt - GREEN  |    By: Nerostav "NERO" Kuznetsov
 * | [~] Esperando - YELLOW              |
-* | [?] Input - YELLOW                  |
-* |-------------------------------------|
+* | [?] Input - YELLOW                  |    
+* |-------------------------------------|    
 *
 * [!] Este programa é um software livre: você pode redistribuí-lo e/ou modificá-lo como quiser.
+* 
 */
 
 #include "Includes.h"
@@ -38,7 +40,7 @@ _  /|  / _  __/   ____/ /_  __  / _  ____/_  _, _/   _/_____/     / /___  / /_/ 
     std::wcout << L"╠═══════════════════════════════════════╣\n";
     std::wcout << L"║ 1  ➡️  Infinite Boost                 ║\n";
     std::wcout << L"║ 2  ➡️  Racer Hacks                    ║\n";
-    std::wcout << L"║ 3  ➡️  Cop Hacks                      ║\n";
+    std::wcout << L"║ 3  ➡️  *                              ║\n";
     std::wcout << L"║ 4  ➡️  *                              ║\n";
     std::wcout << L"║ 5  ➡️  *                              ║\n";
     std::wcout << L"║ 6  ➡️  *                              ║\n";
@@ -92,7 +94,7 @@ uintptr_t GetModuleBaseAddress(uintptr_t ProcessID, const wchar_t* modBaseName)
             {
                 if (!_wcsicmp(MEW32.szModule, modBaseName))
                 {
-                    baseAddress = (uintptr_t)(MEW32.modBaseAddr); // <----
+                    baseAddress = (uintptr_t)(MEW32.modBaseAddr); 
                     break;
                 }
             } while (Module32NextW(hSnapshot, &MEW32));
@@ -183,7 +185,7 @@ int main()
             break;
         case'2':
             system("cls");
-            FunctionRacerHacks(hProcess);
+            FunctionRacerWeapons(hProcess);
 			break;
         case 'z':
             system("cls");
