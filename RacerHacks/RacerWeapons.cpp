@@ -42,7 +42,7 @@ _  _, _// /_/ // /__ /  __/  /        __ |/ |/ / /  __/ /_/ /__  /_/ / /_/ /  / 
     // status = false -> valores originais
 
     COLOR_RED()
-        std::wcout << L"\n\n[!] Current values:";
+    std::wcout << L"\n\n[!] Current values:";
     std::wcout << L"\n[!] SPIKES ----------------> " << CurrentValue[0];
     std::wcout << L"\n[!] TURBO -----------------> " << CurrentValue[1];
     std::wcout << L"\n[!] EMP -------------------> " << CurrentValue[2];
