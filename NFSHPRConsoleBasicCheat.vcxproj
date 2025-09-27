@@ -20,12 +20,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Infinite Boost\InfinteBoost.cpp" />
-    <ClCompile Include="RacerHacks\RacerWeapons.cpp" />
+    <ClCompile Include="RacerHacks\RacerWeaponsHack.cpp" />
     <ClCompile Include="Source\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Infinite Boost\InfiniteBoost.h" />
-    <ClInclude Include="RacerHacks\RacerWeapons.h" />
+    <ClInclude Include="RacerHacks\RacerWeaponsHack.h" />
     <ClInclude Include="Source\Includes.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

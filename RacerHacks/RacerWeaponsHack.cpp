@@ -1,24 +1,24 @@
 ﻿#include <Includes.h>
 
-void FunctionRacerWeapons(HANDLE hProcess)
+void FunctionRacerWeaponsHack(HANDLE hProcess)
 {
     system("cls");
     COLOR_GREEN()
-        std::wcout << R"(
-________                              ___       __                                        
-___  __ \_____ ___________________    __ |     / /__________ _____________________________
-__  /_/ /  __ `/  ___/  _ \_  ___/    __ | /| / /_  _ \  __ `/__  __ \  __ \_  __ \_  ___/
-_  _, _// /_/ // /__ /  __/  /        __ |/ |/ / /  __/ /_/ /__  /_/ / /_/ /  / / /(__  ) 
-/_/ |_| \__,_/ \___/ \___//_/         ____/|__/  \___/\__,_/ _  .___/\____//_/ /_//____/  
-                                                             /_/                           )";
-    uintptr_t RacerWeapons = modBaseAddr + 0x12791C0;
+    std::wcout << R"(
+________                              ___       __                                            ______  __            ______  
+___  __ \_____ ___________________    __ |     / /__________ _____________________________    ___  / / /_____ _________  /__
+__  /_/ /  __ `/  ___/  _ \_  ___/    __ | /| / /_  _ \  __ `/__  __ \  __ \_  __ \_  ___/    __  /_/ /_  __ `/  ___/_  //_/
+_  _, _// /_/ // /__ /  __/  /        __ |/ |/ / /  __/ /_/ /__  /_/ / /_/ /  / / /(__  )     _  __  / / /_/ // /__ _  ,<   
+/_/ |_| \__,_/ \___/ \___//_/         ____/|__/  \___/\__,_/ _  .___/\____//_/ /_//____/      /_/ /_/  \__,_/ \___/ /_/|_|  
+                                                             /_/                                                               )";
+    uintptr_t RacerWeaponsHack = modBaseAddr + 0x12791C0;
     uintptr_t FirstPointer = 0;
     uint32_t CurrentValue[4];
     uint32_t MaxSkillsValue = 99;
     uint32_t SkillsOffsets[] = { 0x5D0, 0x5D8, 0x5DC, 0x5E4 };
     static uint32_t OldSkillsValue[4] = { 0 }; // ➡️ Armazena os valores da corrida atual
 
-    if (!ReadProcessMemory(hProcess, (LPCVOID)RacerWeapons, &FirstPointer, sizeof(FirstPointer), nullptr))
+    if (!ReadProcessMemory(hProcess, (LPCVOID)RacerWeaponsHack, &FirstPointer, sizeof(FirstPointer), nullptr))
     {
         COLOR_RED()
             std::wcout << L"\n\n[!] Failed to read FirstPointer at address!";
@@ -60,7 +60,7 @@ _  _, _// /_/ // /__ /  __/  /        __ |/ |/ / /  __/ /_/ /__  /_/ / /_/ /  / 
                 {
                     uintptr_t FinalAddress = FirstPointer + SkillsOffsets[i];
 
-                    if (OldSkillsValue[i] == 0)
+					if (OldSkillsValue[i] == 0) // Se for a primeira vez que ativamos, salvamos o valor atual
                     {
                         ReadProcessMemory(hProcess, (LPCVOID)FinalAddress, &OldSkillsValue[i], sizeof(OldSkillsValue[i]), nullptr);
                     }
@@ -77,7 +77,7 @@ _  _, _// /_/ // /__ /  __/  /        __ |/ |/ / /  __/ /_/ /__  /_/ / /_/ /  / 
                     WriteProcessMemory(hProcess, (LPVOID)FinalAddress, &OldSkillsValue[i], sizeof(OldSkillsValue[i]), nullptr);
                 }
                 COLOR_GREEN()
-                    std::wcout << L"\n[*] Racer Weapons -> OFF (OLD VALUES SET)";
+                    std::wcout << L"[*] Racer Weapons -> OFF (OLD VALUES SET)\n";
             }
 
             Status = !Status;
@@ -88,11 +88,11 @@ _  _, _// /_/ // /__ /  __/  /        __ |/ |/ / /  __/ /_/ /__  /_/ / /_/ /  / 
                 ReadProcessMemory(hProcess, (LPCVOID)FinalAddress, &CurrentValue[i], sizeof(CurrentValue[i]), nullptr);
             }
 
-            COLOR_RED()
-            std::wcout << L"\n[!] SPIKES ----------------> " << CurrentValue[0];
-            std::wcout << L"\n[!] TURBO -----------------> " << CurrentValue[1];
-            std::wcout << L"\n[!] EMP -------------------> " << CurrentValue[2];
-            std::wcout << L"\n[!] JAMMER ----------------> " << CurrentValue[3] << L"\n";
+            //COLOR_RED()
+            //std::wcout << L"\n[!] SPIKES ----------------> " << CurrentValue[0];
+            //std::wcout << L"\n[!] TURBO -----------------> " << CurrentValue[1];
+            //std::wcout << L"\n[!] EMP -------------------> " << CurrentValue[2];
+            //std::wcout << L"\n[!] JAMMER ----------------> " << CurrentValue[3] << L"\n";
         }
 
         if (GetAsyncKeyState(VK_ESCAPE) & 1)
