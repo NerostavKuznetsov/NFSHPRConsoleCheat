@@ -16,44 +16,47 @@ void FunctionRacerWeaponsHack(HANDLE hProcess)
 	system("cls");
     CONSOLE_CURSOR_INFO Cursor = { 1 };
     SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &Cursor);
+    COLOR_GREEN()
     Banner();
 
     uintptr_t RacerWeaponsHack = modBaseAddr + 0x12791C0;
-    uintptr_t FirstPointer = 0;
+    uint32_t RacerWeaponsOffsets[] = { 0x5D0, 0x5D8, 0x5DC, 0x5E4 };
     uint32_t CurrentValue[4];
-    uint32_t MaxSkillsValue = 99;
-    uint32_t SkillsOffsets[] = { 0x5D0, 0x5D8, 0x5DC, 0x5E4 };
-    static uint32_t OldSkillsValue[4] = { 0 }; // ➡️ Armazena os valores da corrida atual
+    uint32_t MaxWeaponsValue = 99;
+    static uint32_t OldWeaponsValue[4] = { 0 }; // ➡️ Armazena os valores da corrida atual
 
+    uintptr_t FirstPointer = 0;
     if (!ReadProcessMemory(hProcess, (LPCVOID)RacerWeaponsHack, &FirstPointer, sizeof(FirstPointer), nullptr))
     {
         COLOR_RED()
-            std::wcout << L"\n\n[!] Failed to read FirstPointer at address!";
+        std::wcout << L"\n\n[!] Failed to read FirstPointer at address!";
         return;
     }
 
     for (int i = 0; i < 4; i++)
     {
-        uintptr_t FinalAddress = FirstPointer + SkillsOffsets[i];
+        uintptr_t FinalAddress = FirstPointer + RacerWeaponsOffsets[i];
 
         if (!ReadProcessMemory(hProcess, (LPCVOID)FinalAddress, &CurrentValue[i], sizeof(CurrentValue[i]), nullptr))
         {
             COLOR_RED()
-                std::wcout << L"\n\n[!] Failed to read memory at address!";
+            std::wcout << L"\n\n[!] Failed to read memory at address!";
             return;
         }
     }
 
     // ➡️ Status = true  -> todos os valores são 99
-    // ➡️ Status = false -> valores originais
-    bool Status = (CurrentValue[0] == MaxSkillsValue && CurrentValue[1] == MaxSkillsValue && CurrentValue[2] == MaxSkillsValue && CurrentValue[3] == MaxSkillsValue);
+    // ➡️ Status = false -> Valores originais
+    bool Status = (CurrentValue[0] == MaxWeaponsValue && CurrentValue[1] == MaxWeaponsValue && CurrentValue[2] == MaxWeaponsValue && CurrentValue[3] == MaxWeaponsValue);
     
+    std::wcout << L"Primeiro Ponteiro: " << FirstPointer << "\n";
+
     COLOR_RED()
     std::wcout << L"\n[!] Current values:";
-    std::wcout << L"\n[!] SPIKES ----------------> " << CurrentValue[0];
-    std::wcout << L"\n[!] TURBO -----------------> " << CurrentValue[1];
-    std::wcout << L"\n[!] EMP -------------------> " << CurrentValue[2];
-    std::wcout << L"\n[!] JAMMER ----------------> " << CurrentValue[3];
+    std::wcout << L"\n[!] SPIKES ----------------> " << CurrentValue[0]; // ➡️ 0x5D0
+    std::wcout << L"\n[!] TURBO -----------------> " << CurrentValue[1]; // ➡️ 0x5D8
+    std::wcout << L"\n[!] EMP -------------------> " << CurrentValue[2]; // ➡️ 0x5DC
+    std::wcout << L"\n[!] JAMMER ----------------> " << CurrentValue[3]; // ➡️ 0x5E4
     std::wcout << L"\n\n[!] Racer Weapons are " << (Status ? L"ON (MAX VALUES)\n" : L"OFF (OLD VALUES)\n");
     std::wcout << L"[!] Press INSERT to toggle Racer Weapons or ESC to return to the main menu...\n";
 
@@ -65,13 +68,13 @@ void FunctionRacerWeaponsHack(HANDLE hProcess)
             {
                 for (int i = 0; i < 4; i++)
                 {
-                    uintptr_t FinalAddress = FirstPointer + SkillsOffsets[i];
+                    uintptr_t FinalAddress = FirstPointer + RacerWeaponsOffsets[i];
 
-					if (OldSkillsValue[i] == 0) // ➡️ Se for a primeira vez que ativamos, salvamos o valor atual
+					if (OldWeaponsValue[i] == 0) // ➡️ Se for a primeira vez que ativamos, salvamos o valor atual
                     {
-                        ReadProcessMemory(hProcess, (LPCVOID)FinalAddress, &OldSkillsValue[i], sizeof(OldSkillsValue[i]), nullptr);
+                        ReadProcessMemory(hProcess, (LPCVOID)FinalAddress, &OldWeaponsValue[i], sizeof(OldWeaponsValue[i]), nullptr);
                     }
-                    WriteProcessMemory(hProcess, (LPVOID)FinalAddress, &MaxSkillsValue, sizeof(MaxSkillsValue), nullptr);
+                    WriteProcessMemory(hProcess, (LPVOID)FinalAddress, &MaxWeaponsValue, sizeof(MaxWeaponsValue), nullptr);
                 }
                 COLOR_GREEN()
                 std::wcout << L"\n[*] Racer Weapons -> ON (99 SET)";
@@ -80,8 +83,8 @@ void FunctionRacerWeaponsHack(HANDLE hProcess)
             {
                 for (int i = 0; i < 4; i++)
                 {
-                    uintptr_t FinalAddress = FirstPointer + SkillsOffsets[i];
-                    WriteProcessMemory(hProcess, (LPVOID)FinalAddress, &OldSkillsValue[i], sizeof(OldSkillsValue[i]), nullptr);
+                    uintptr_t FinalAddress = FirstPointer + RacerWeaponsOffsets[i];
+                    WriteProcessMemory(hProcess, (LPVOID)FinalAddress, &OldWeaponsValue[i], sizeof(OldWeaponsValue[i]), nullptr);
                 }
                 COLOR_GREEN()
                 std::wcout << L"\n[*] Racer Weapons -> OFF (OLD VALUES SET)";
@@ -91,7 +94,7 @@ void FunctionRacerWeaponsHack(HANDLE hProcess)
 
             for (int i = 0; i < 4; i++)
             {
-                uintptr_t FinalAddress = FirstPointer + SkillsOffsets[i];
+                uintptr_t FinalAddress = FirstPointer + RacerWeaponsOffsets[i];
                 ReadProcessMemory(hProcess, (LPCVOID)FinalAddress, &CurrentValue[i], sizeof(CurrentValue[i]), nullptr);
             }
 
@@ -107,7 +110,7 @@ void FunctionRacerWeaponsHack(HANDLE hProcess)
             std::wcout << L"\n[!] EMP -------------------> " << CurrentValue[2];
             std::wcout << L"\n[!] JAMMER ----------------> " << CurrentValue[3];
             std::wcout << L"\n\n[!] Racer Weapons are " << (Status ? L"ON (MAX VALUES)\n" : L"OFF (OLD VALUES)\n");
-            std::wcout << L"[!] Press INSERT to toggle Racer Weapons or ESC to return to the main menu...\n";
+            std::wcout << L"[!] Press INSERT to toggle Racer Weapons Hack or ESC to return to the main menu...\n";
         }
 
         if (GetAsyncKeyState(VK_ESCAPE) & 1)

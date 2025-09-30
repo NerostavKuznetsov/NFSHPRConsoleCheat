@@ -15,6 +15,7 @@
 // ➡️ Headers
 #include "InfiniteBoost.h"
 #include "RacerWeaponsHack.h"
+#include "PoliceWeaponsHack.h"
 
 // ➡️ Global extern variables
 extern uintptr_t modBaseAddr;

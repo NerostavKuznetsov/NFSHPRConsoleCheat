@@ -20,12 +20,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Infinite Boost\InfinteBoost.cpp" />
-    <ClCompile Include="RacerHacks\RacerWeaponsHack.cpp" />
+    <ClCompile Include="PoliceWeaponsHack\PoliceWeaponsHack.cpp" />
+    <ClCompile Include="RacerWeaponsHack\RacerWeaponsHack.cpp" />
     <ClCompile Include="Source\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Infinite Boost\InfiniteBoost.h" />
-    <ClInclude Include="RacerHacks\RacerWeaponsHack.h" />
+    <ClInclude Include="PoliceWeaponsHack\PoliceWeaponsHack.h" />
+    <ClInclude Include="RacerWeaponsHack\RacerWeaponsHack.h" />
     <ClInclude Include="Source\Includes.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -126,7 +128,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(ProjectDir)Source;$(ProjectDir)RacerHacks;$(ProjectDir)Infinite Boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)Source;$(ProjectDir)PoliceWeaponsHack;$(ProjectDir)RacerWeaponsHack;$(ProjectDir)Infinite Boost;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

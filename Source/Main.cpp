@@ -39,8 +39,8 @@ _  /|  / _  __/   ____/ /_  __  / _  ____/_  _, _/   _/_____/     / /___  / /_/ 
     std::wcout << L"║               MAIN MENU               ║\n";
     std::wcout << L"╠═══════════════════════════════════════╣\n";
     std::wcout << L"║ 1  ➡️  Infinite Boost                 ║\n";
-    std::wcout << L"║ 2  ➡️  Racer Weapons Hacks            ║\n";
-    std::wcout << L"║ 3  ➡️  Police Weapons Hacks           ║\n";
+    std::wcout << L"║ 2  ➡️  Racer Weapons Hack             ║\n";
+    std::wcout << L"║ 3  ➡️  Police Weapons Hack            ║\n";
     std::wcout << L"║ 4  ➡️  *                              ║\n";
     std::wcout << L"║ 5  ➡️  *                              ║\n";
     std::wcout << L"║ 6  ➡️  *                              ║\n";
@@ -186,6 +186,10 @@ int main()
         case'2':
             system("cls");
             FunctionRacerWeaponsHack(hProcess);
+			break;
+		case'3':
+			system("cls");
+			FunctionPoliceWeaponsHack(hProcess);
 			break;
         case 'z':
             system("cls");
