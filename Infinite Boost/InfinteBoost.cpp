@@ -16,7 +16,7 @@ void FunctionInfiniteBoost(HANDLE hProcess)
 	CONSOLE_CURSOR_INFO Cursor = { 1 };
 	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &Cursor);
 
-	COLOR_GREEN()
+	COLOR_GREEN();
 	Banner();
 
 	uintptr_t Instruction_Address = 0x1402BB332;  
@@ -26,7 +26,7 @@ void FunctionInfiniteBoost(HANDLE hProcess)
 
 	if(!ReadProcessMemory(hProcess, (LPCVOID)Instruction_Address, CurrentValue, sizeof(CurrentValue), nullptr))
 	{
-		COLOR_RED()
+		COLOR_RED();
 		std::wcout << L"\n\n[!] Failed to read at memory address";
 		Sleep(1666);
 		return;	
@@ -36,7 +36,7 @@ void FunctionInfiniteBoost(HANDLE hProcess)
 	 
 	std::fill(std::begin(NOP_Bytes), std::end(NOP_Bytes), 0x90);
 
-	COLOR_RED()
+	COLOR_RED();
 	std::wcout << L"\n\n[!] Infinite Boost is " << (Status ? "disabled\n" : "enabled\n");
 	std::wcout << L"[!] Press INSERT to toggle Infinite Boost or ESC to return to the main menu...\n";
 
@@ -47,13 +47,13 @@ void FunctionInfiniteBoost(HANDLE hProcess)
 			if (Status)
 			{
 				WriteProcessMemory(hProcess, (LPVOID)Instruction_Address, NOP_Bytes, sizeof(NOP_Bytes), nullptr);
-				COLOR_GREEN()
+				COLOR_GREEN();
 				std::wcout << L"[*] Infinite Boost has been successfully enabled\n";
 			}
 			else
 			{
 				WriteProcessMemory(hProcess, (LPVOID)Instruction_Address, OriginalBytes, sizeof(OriginalBytes), nullptr);
-				COLOR_GREEN()
+				COLOR_GREEN();
 				std::wcout << L"[*] Infinite Boost has been successfully disabled\n";
 			}
 			Status = !Status;

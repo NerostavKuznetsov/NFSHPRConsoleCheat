@@ -18,36 +18,37 @@
 void ShowMenu()
 {
     system("cls");
-    COLOR_GREEN()
+    COLOR_GREEN();
     std::wcout << R"(
 _____   _______________________  _________________                _________                         ______          ________              _____           ______________             _____ 
 ___  | / /__  ____/_  ___/__  / / /__  __ \__  __ \               __  ____/____________________________  /____      ___  __ )_____ __________(_)______    __  ____/__  /____________ __  /_
 __   |/ /__  /_   _____ \__  /_/ /__  /_/ /_  /_/ /  ________     _  /    _  __ \_  __ \_  ___/  __ \_  /_  _ \     __  __  |  __ `/_  ___/_  /_  ___/    _  /    __  __ \  _ \  __ `/  __/
 _  /|  / _  __/   ____/ /_  __  / _  ____/_  _, _/   _/_____/     / /___  / /_/ /  / / /(__  )/ /_/ /  / /  __/     _  /_/ // /_/ /_(__  )_  / / /__      / /___  _  / / /  __/ /_/ // /_  
 /_/ |_/  /_/      /____/ /_/ /_/  /_/     /_/ |_|                 \____/  \____//_/ /_//____/ \____//_/  \___/      /_____/ \__,_/ /____/ /_/  \___/      \____/  /_/ /_/\___/\__,_/ \__/   )";
+
     std::wcout << "\n\n";
     std::wcout << "                                                                                                                                                                               By: Nerostav Kuznetsov\n";
-    COLOR_RED()
+    COLOR_RED();
     std::wcout << L"[!] CTRL + CLICK to follow the link                                                        \n";
     std::wcout << L"[!] Steam:   https://steamcommunity.com/profiles/76561198304587027                          \n";
     std::wcout << L"[!] Insta:   https://instagram.com/nrstv_kuznetsov                                           \n";
     std::wcout << L"[!] Github:  https://github.com/NerostavKuznetsov/NFSHPRConsoleBasicCheat                     \n";
     std::wcout << L"[!] Youtub:  https://youtube.com/@Kuzntsv-666                                                  \n";
-    COLOR_GREEN()
+    COLOR_GREEN();
     std::wcout << L" \n";
     std::wcout << L"╔═══════════════════════════════════════╗\n";
     std::wcout << L"║               MAIN MENU               ║\n";
     std::wcout << L"╠═══════════════════════════════════════╣\n";
-    std::wcout << L"║ 1  ➡️  Infinite Boost                 ║\n";
-    std::wcout << L"║ 2  ➡️  Racer Weapons Hack             ║\n";
-    std::wcout << L"║ 3  ➡️  Police Weapons Hack            ║\n";
-    std::wcout << L"║ 4  ➡️  *                              ║\n";
-    std::wcout << L"║ 5  ➡️  *                              ║\n";
-    std::wcout << L"║ 6  ➡️  *                              ║\n";
-    std::wcout << L"║ 7  ➡️  *                              ║\n";
-    std::wcout << L"║ 8  ➡️  *                              ║\n";
-    std::wcout << L"║ 9  ➡️  *                              ║\n";
-    std::wcout << L"║ z  ➡️  Exit                           ║\n";
+    std::wcout << L"║ (1)  ➡️  Infinite Boost               ║\n";
+    std::wcout << L"║ (2)  ➡️  Racer Weapons Hack           ║\n";
+    std::wcout << L"║ (3)  ➡️  Police Weapons Hack          ║\n";
+    std::wcout << L"║ (4)  ➡️  *                            ║\n";
+    std::wcout << L"║ (5)  ➡️  *                            ║\n";
+    std::wcout << L"║ (6)  ➡️  *                            ║\n";
+    std::wcout << L"║ (7)  ➡️  *                            ║\n";
+    std::wcout << L"║ (8)  ➡️  *                            ║\n";
+    std::wcout << L"║ (9)  ➡️  *                            ║\n";
+    std::wcout << L"║ (z)  ➡️  Exit                         ║\n";
 	std::wcout << L"╠═══════════════════════════════════════╣\n";
     std::wcout << L"║ Need For Speed Hot Porsuit Remastered ║\n";
     std::wcout << L"╚═══════════════════════════════════════╝\n";
@@ -117,7 +118,7 @@ int main()
     while (PID == 0) 
     {
         system("cls");
-        COLOR_YELLOW()
+        COLOR_YELLOW();
         std::wcout << L"[~] Waiting for NFS11Remastered.exe";
         for (int i = 0; i < 6; i++)
         {
@@ -136,11 +137,11 @@ int main()
     while (running)
     {
         ShowMenu();
-        COLOR_RED()
+        COLOR_RED();
         std::wcout << L"\n[!] Base address: 0x" << std::hex << modBaseAddr << L"\n";
         std::wcout << L"[!] ProcessID: " << std::dec << PID << L"\n";
-        COLOR_YELLOW()
-        std::wcout << L"[?] Enter your option (1-9): ";
+        COLOR_YELLOW();
+        std::wcout << L"[?] Enter your option (1-9 or z): ";
         std::wstring input;
 
         while (true)
@@ -162,14 +163,14 @@ int main()
 
         if (input.empty())
         {
-            COLOR_RED()
+            COLOR_RED();
             std::wcout << L"\n[!] Empty option\n";
             Sleep(1666);
             continue; 
         }
         else if (input.length() > 1)
         {
-            COLOR_RED()
+            COLOR_RED();
             std::wcout << L"\n[!] Invalid option. Please enter a single digit or 'z' to exit\n";
             Sleep(1666);
             continue; 
@@ -191,9 +192,12 @@ int main()
 			system("cls");
 			FunctionPoliceWeaponsHack(hProcess);
 			break;
+
+
+
         case 'z':
             system("cls");
-            COLOR_RED()
+            COLOR_RED();
             std::wcout << L"[!] Closing the program";
             for (int i = 0; i < 6; i++)
             {
