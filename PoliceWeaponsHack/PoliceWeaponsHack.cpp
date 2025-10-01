@@ -73,7 +73,7 @@ void FunctionPoliceWeaponsHack(HANDLE hProcess)
                 WriteProcessMemory(hProcess, (LPVOID)FinalAddress, &MaxWeaponsValue, sizeof(MaxWeaponsValue), nullptr);
             }
             COLOR_GREEN();
-            std::wcout << L"\n[*] Police Weapons Hack -> ON (99 SET)";
+            std::wcout << L"\n[*] Police Weapons Hack -> ON (99 SDDDET)";
         }
 
 
