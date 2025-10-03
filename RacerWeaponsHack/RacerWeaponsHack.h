@@ -1,3 +1,4 @@
-#pragma once 
+#pragma once
+#include "../Source/Includes.h"
 
 void FunctionRacerWeaponsHack(HANDLE hProcess);

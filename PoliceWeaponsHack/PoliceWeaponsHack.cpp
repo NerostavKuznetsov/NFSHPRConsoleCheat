@@ -1,4 +1,4 @@
-﻿#include "Includes.h"
+﻿#include "../Source/Includes.h"
 
 static void Banner()
 {
@@ -57,32 +57,25 @@ void FunctionPoliceWeaponsHack(HANDLE hProcess)
     std::wcout << L"\n\n[!] Police Weapons are " << (Status ? L"ON (MAX VALUES)\n" : L"OFF (OLD VALUES)\n");
     std::wcout << L"[!] Press INSERT to toggle Police Weapons or ESC to return to the main menu...\n";
 
-    while (true)
+   while (true)
     {
-        if (GetAsyncKeyState(VK_INSERT) & 1)
-        {
-            for (int i = 0; i < 4; i++)
-            {
+        //if (GetAsyncKeyState(VK_INSERT) & 1)
+        //{
+            //for (int i = 0; i < 4; i++)
+            //{
 
-                uintptr_t FinalAddress = FirstPointer + PoliceWeaponsOffsets[i];
+                //uintptr_t FinalAddress = FirstPointer + PoliceWeaponsOffsets[i];
 
-                if (OldWeaponsValue[i] == 0)
-                {
-                    ReadProcessMemory(hProcess, (LPCVOID)FinalAddress, &OldWeaponsValue[i], sizeof(OldWeaponsValue[i], nullptr));
-                }
-                WriteProcessMemory(hProcess, (LPVOID)FinalAddress, &MaxWeaponsValue, sizeof(MaxWeaponsValue), nullptr);
-            }
-            COLOR_GREEN();
-            std::wcout << L"\n[*] Police Weapons Hack -> ON (99 SDDDET)";
-        }
+                //if (OldWeaponsValue[i] == 0)
+                //{
+                    //ReadProcessMemory(hProcess, (LPCVOID)FinalAddress, &OldWeaponsValue[i], sizeof(OldWeaponsValue[i], nullptr));
+                //
+                //WriteProcessMemory(hProcess, (LPVOID)FinalAddress, &MaxWeaponsValue, sizeof(MaxWeaponsValue), nullptr);
+            //}
+            //COLOR_GREEN();
+            //std::wcout << L"\n[*] Police Weapons Hack -> ON (99 SDDDET)";
+        //}
 
-
-
-
-
-
-
-        
         if (GetAsyncKeyState(VK_ESCAPE) & 1)
         {
            

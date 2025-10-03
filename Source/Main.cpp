@@ -13,7 +13,10 @@
 * 
 */
 
-#include "Includes.h"
+//#include "Includes.h"
+#include "../RacerWeaponsHack/RacerWeaponsHack.h"
+#include "../PoliceWeaponsHack/PoliceWeaponsHack.h"
+#include "../Infinite Boost/InfiniteBoost.h"
 
 void ShowMenu()
 {
@@ -25,7 +28,7 @@ ___  | / /__  ____/_  ___/__  / / /__  __ \__  __ \               __  ____/_____
 __   |/ /__  /_   _____ \__  /_/ /__  /_/ /_  /_/ /  ________     _  /    _  __ \_  __ \_  ___/  __ \_  /_  _ \     __  __  |  __ `/_  ___/_  /_  ___/    _  /    __  __ \  _ \  __ `/  __/
 _  /|  / _  __/   ____/ /_  __  / _  ____/_  _, _/   _/_____/     / /___  / /_/ /  / / /(__  )/ /_/ /  / /  __/     _  /_/ // /_/ /_(__  )_  / / /__      / /___  _  / / /  __/ /_/ // /_  
 /_/ |_/  /_/      /____/ /_/ /_/  /_/     /_/ |_|                 \____/  \____//_/ /_//____/ \____//_/  \___/      /_____/ \__,_/ /____/ /_/  \___/      \____/  /_/ /_/\___/\__,_/ \__/   )";
-
+                                                                                                                                                                   
     std::wcout << "\n\n";
     std::wcout << "                                                                                                                                                                               By: Nerostav Kuznetsov\n";
     COLOR_RED();

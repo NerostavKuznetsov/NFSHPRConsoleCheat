@@ -1,45 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source">
-      <UniqueIdentifier>{a97cb290-398a-4380-97bb-6c0eaf6b89e6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Infinite Boost">
-      <UniqueIdentifier>{b3f123b0-f4f2-41ab-befa-179277734265}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="PoliceWeaponsHack">
-      <UniqueIdentifier>{4ddce00f-7fcf-4173-bba8-0f28b523c0af}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="RacerWeaponsHack">
-      <UniqueIdentifier>{6e88dda1-267b-4aa2-87d9-e962fd7d969a}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Infinite Boost\InfiniteBoost.h">
-      <Filter>Infinite Boost</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\Includes.h">
-      <Filter>Source</Filter>
-    </ClInclude>
-    <ClInclude Include="RacerWeaponsHack\RacerWeaponsHack.h">
-      <Filter>RacerWeaponsHack</Filter>
-    </ClInclude>
-    <ClInclude Include="PoliceWeaponsHack\PoliceWeaponsHack.h">
-      <Filter>PoliceWeaponsHack</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Infinite Boost\InfinteBoost.cpp">
-      <Filter>Infinite Boost</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Main.cpp">
-      <Filter>Source</Filter>
-    </ClCompile>
     <ClCompile Include="RacerWeaponsHack\RacerWeaponsHack.cpp">
-      <Filter>RacerWeaponsHack</Filter>
+      <Filter>Arquivos de Origem</Filter>
     </ClCompile>
     <ClCompile Include="PoliceWeaponsHack\PoliceWeaponsHack.cpp">
-      <Filter>PoliceWeaponsHack</Filter>
+      <Filter>Arquivos de Origem</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Main.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+    <ClCompile Include="Infinite Boost\InfinteBoost.cpp">
+      <Filter>Arquivos de Origem</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Includes.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="Infinite Boost\InfiniteBoost.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="PoliceWeaponsHack\PoliceWeaponsHack.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+    <ClInclude Include="RacerWeaponsHack\RacerWeaponsHack.h">
+      <Filter>Arquivos de Cabeçalho</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Arquivos de Origem">
+      <UniqueIdentifier>{bef0b06e-d0a6-462c-86a9-6e09b78ee450}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Arquivos de Cabeçalho">
+      <UniqueIdentifier>{74a9a3c9-e8ea-4ed2-bcf3-688995035c49}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>
