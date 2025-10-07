@@ -16,6 +16,8 @@
 #include "../RacerWeaponsHack/RacerWeaponsHack.h"
 #include "../PoliceWeaponsHack/PoliceWeaponsHack.h"
 #include "../InfiniteBoost/InfiniteBoost.h"
+#include "../GodMode/GodMode.h"
+
 
 void ShowMenu()
 {
@@ -31,8 +33,7 @@ _  /|  / _  __/   ____/ /_  __  / _  ____/_  _, _/   _/_____/     / /___  / /_/ 
     std::wcout << "\n\n";
     std::wcout << "                                                                                                                                         By: Nerostav Kuznetsov\n";
     COLOR_RED();
-    std::wcout << L"[!] CTRL + CLICK to follow the link                                                       \n";
-	std::wcout << L"                                                                                           \n";
+    std::wcout << L"[!] CTRL + CLICK to follow the link                                                        \n";
     std::wcout << L"[!] Github:  https://github.com/NerostavKuznetsov/NFSHPRConsoleBasicCheat                   \n";
     std::wcout << L"[!] Steam:   https://steamcommunity.com/profiles/76561198304587027                           \n";                                          
     std::wcout << L"[!] Youtub:  https://youtube.com/@Kuzntsv-666                                                 \n";
@@ -44,7 +45,7 @@ _  /|  / _  __/   ____/ /_  __  / _  ____/_  _, _/   _/_____/     / /___  / /_/ 
     std::wcout << L"║ (1)  ➡️  Infinite Boost               ║\n";
     std::wcout << L"║ (2)  ➡️  Racer Weapons Hack           ║\n";
     std::wcout << L"║ (3)  ➡️  Police Weapons Hack          ║\n";
-    std::wcout << L"║ (4)  ➡️  *                            ║\n";
+    std::wcout << L"║ (4)  ➡️  God Mode                     ║\n";
     std::wcout << L"║ (5)  ➡️  *                            ║\n";
     std::wcout << L"║ (6)  ➡️  *                            ║\n";
     std::wcout << L"║ (7)  ➡️  *                            ║\n";
@@ -63,23 +64,23 @@ DWORD GetProcessIdByName(const std::wstring& processName)
 
     if (hSnapshot != INVALID_HANDLE_VALUE)
     {
-        PROCESSENTRY32 PE32;
-        PE32.dwSize = sizeof(PROCESSENTRY32);
+        PROCESSENTRY32 PE;
+        PE.dwSize = sizeof(PROCESSENTRY32);
 
-        if (Process32FirstW(hSnapshot, &PE32))
+        if (Process32FirstW(hSnapshot, &PE))
         {
             do
             {
-                if (processName == PE32.szExeFile)
+                if (processName == PE.szExeFile)
                 {
-                    processID = PE32.th32ProcessID;
+                    processID = PE.th32ProcessID;
                     break;
                 }
-            } while (Process32NextW(hSnapshot, &PE32));
+            } while (Process32NextW(hSnapshot, &PE));
         }
         CloseHandle(hSnapshot);
-        return processID;
     }
+    return processID;
 }
 
 uintptr_t GetModuleBaseAddress(uintptr_t ProcessID, const wchar_t* modBaseName) 
@@ -194,6 +195,10 @@ int main()
 			system("cls");
 			PoliceWeaponsHack(hProcess);
 			break;
+        case'4':
+            system("cls");
+            GodMode(hProcess);
+            break;
         case 'z':
             system("cls");
             COLOR_RED();
@@ -203,7 +208,7 @@ int main()
                 std::wcout << L".";
                 Sleep(666);
             }
-            Sleep(1666);
+            Sleep(666);
             running = FALSE; 
             break;
         }

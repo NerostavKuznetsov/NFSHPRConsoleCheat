@@ -81,5 +81,5 @@ void PoliceWeaponsHack(HANDLE hProcess)
            
             return; 
         }
-    }
+   }
 }

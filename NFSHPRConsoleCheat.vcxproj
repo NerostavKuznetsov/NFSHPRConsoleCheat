@@ -19,12 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="GodMode\GodMode.cpp" />
     <ClCompile Include="InfiniteBoost\InfinteBoost.cpp" />
     <ClCompile Include="PoliceWeaponsHack\PoliceWeaponsHack.cpp" />
     <ClCompile Include="RacerWeaponsHack\RacerWeaponsHack.cpp" />
     <ClCompile Include="Source\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GodMode\GodMode.h" />
     <ClInclude Include="InfiniteBoost\InfiniteBoost.h" />
     <ClInclude Include="PoliceWeaponsHack\PoliceWeaponsHack.h" />
     <ClInclude Include="RacerWeaponsHack\RacerWeaponsHack.h" />
@@ -129,6 +131,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
