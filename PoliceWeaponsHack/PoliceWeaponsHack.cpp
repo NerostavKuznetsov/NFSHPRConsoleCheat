@@ -11,7 +11,7 @@ _  ____// /_/ /  / _  / / /__ /  __/     __ |/ |/ / /  __/ /_/ /__  /_/ / /_/ / 
                                                                 /_/                                                               )";
 }
 
-void FunctionPoliceWeaponsHack(HANDLE hProcess)
+void PoliceWeaponsHack(HANDLE hProcess)
 {
     system("cls");
     CONSOLE_CURSOR_INFO Cursor = { 1 };

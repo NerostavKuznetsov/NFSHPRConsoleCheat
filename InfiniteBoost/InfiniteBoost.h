@@ -1,4 +1,4 @@
 #pragma once
 #include "../Source/Includes.h"
 
-void PoliceWeaponsHack(HANDLE hProcess);
+void InfiniteBoost(HANDLE hProcess);

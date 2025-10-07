@@ -11,7 +11,7 @@ _  _, _// /_/ // /__ /  __/  /        __ |/ |/ / /  __/ /_/ /__  /_/ / /_/ /  / 
                                                                 /_/                                                               )";
 }
 
-void FunctionRacerWeaponsHack(HANDLE hProcess)
+void RacerWeaponsHack(HANDLE hProcess)
 {
 	system("cls");
     CONSOLE_CURSOR_INFO Cursor = { 1 };
@@ -19,7 +19,7 @@ void FunctionRacerWeaponsHack(HANDLE hProcess)
     COLOR_GREEN();
     Banner();
 
-    uintptr_t RacerWeaponsHack = modBaseAddr + 0x12791C0; 
+    uintptr_t RacerWeaponsHack = (modBaseAddr + 0x12791C0);
     uint32_t RacerWeaponsOffsets[] = { 0x5D0, 0x5D8, 0x5DC, 0x5E4 };
     uint32_t CurrentValue[4];
     uint32_t MaxWeaponsValue = 99;
@@ -30,6 +30,7 @@ void FunctionRacerWeaponsHack(HANDLE hProcess)
     {
         COLOR_RED();
         std::wcout << L"\n\n[!] Failed to read FirstPointer at address!";
+		Sleep(1666);
         return;
     }
 
@@ -47,8 +48,8 @@ void FunctionRacerWeaponsHack(HANDLE hProcess)
 
     // ➡️ Status = true  -> todos os valores são 99
     // ➡️ Status = false -> Valores originais
-    bool Status = (CurrentValue[0] == MaxWeaponsValue && CurrentValue[1] == MaxWeaponsValue && CurrentValue[2] == MaxWeaponsValue && CurrentValue[3] == MaxWeaponsValue);
-    
+    bool Status = (CurrentValue[0] == MaxWeaponsValue) && (CurrentValue[1] == MaxWeaponsValue) && (CurrentValue[2] == MaxWeaponsValue) && (CurrentValue[3] == MaxWeaponsValue);
+
     COLOR_RED();
     std::wcout << L"\n[!] Current values:";
     std::wcout << L"\n[!] SPIKES ----------------> " << CurrentValue[0]; // ➡️ 0x5D0
@@ -97,7 +98,7 @@ void FunctionRacerWeaponsHack(HANDLE hProcess)
                 ReadProcessMemory(hProcess, (LPCVOID)FinalAddress, &CurrentValue[i], sizeof(CurrentValue[i]), nullptr);
             }
 
-            Sleep(1666);
+            Sleep(666);
 			system("cls");
 
             COLOR_GREEN();

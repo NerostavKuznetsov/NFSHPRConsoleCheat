@@ -19,13 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Infinite Boost\InfinteBoost.cpp" />
+    <ClCompile Include="InfiniteBoost\InfinteBoost.cpp" />
     <ClCompile Include="PoliceWeaponsHack\PoliceWeaponsHack.cpp" />
     <ClCompile Include="RacerWeaponsHack\RacerWeaponsHack.cpp" />
     <ClCompile Include="Source\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Infinite Boost\InfiniteBoost.h" />
+    <ClInclude Include="InfiniteBoost\InfiniteBoost.h" />
     <ClInclude Include="PoliceWeaponsHack\PoliceWeaponsHack.h" />
     <ClInclude Include="RacerWeaponsHack\RacerWeaponsHack.h" />
     <ClInclude Include="Source\Includes.h" />

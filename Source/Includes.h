@@ -11,7 +11,6 @@
 #include <tlHelp32.h>
 #include <string>
 #include <tchar.h>
-//#include <stdint.h>
 
 // ➡️ Global extern variables
 extern uintptr_t modBaseAddr;

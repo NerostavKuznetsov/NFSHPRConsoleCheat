@@ -13,30 +13,29 @@
 * 
 */
 
-//#include "Includes.h"
 #include "../RacerWeaponsHack/RacerWeaponsHack.h"
 #include "../PoliceWeaponsHack/PoliceWeaponsHack.h"
-#include "../Infinite Boost/InfiniteBoost.h"
+#include "../InfiniteBoost/InfiniteBoost.h"
 
 void ShowMenu()
 {
     system("cls");
     COLOR_GREEN();
     std::wcout << R"(
-_____   _______________________  _________________                _________                         ______          ________              _____           ______________             _____ 
-___  | / /__  ____/_  ___/__  / / /__  __ \__  __ \               __  ____/____________________________  /____      ___  __ )_____ __________(_)______    __  ____/__  /____________ __  /_
-__   |/ /__  /_   _____ \__  /_/ /__  /_/ /_  /_/ /  ________     _  /    _  __ \_  __ \_  ___/  __ \_  /_  _ \     __  __  |  __ `/_  ___/_  /_  ___/    _  /    __  __ \  _ \  __ `/  __/
-_  /|  / _  __/   ____/ /_  __  / _  ____/_  _, _/   _/_____/     / /___  / /_/ /  / / /(__  )/ /_/ /  / /  __/     _  /_/ // /_/ /_(__  )_  / / /__      / /___  _  / / /  __/ /_/ // /_  
-/_/ |_/  /_/      /____/ /_/ /_/  /_/     /_/ |_|                 \____/  \____//_/ /_//____/ \____//_/  \___/      /_____/ \__,_/ /____/ /_/  \___/      \____/  /_/ /_/\___/\__,_/ \__/   )";
+_____   _______________________  _________________                _________                         ______          ______________             _____ 
+___  | / /__  ____/_  ___/__  / / /__  __ \__  __ \               __  ____/____________________________  /____      __  ____/__  /____________ __  /_
+__   |/ /__  /_   _____ \__  /_/ /__  /_/ /_  /_/ /  ________     _  /    _  __ \_  __ \_  ___/  __ \_  /_  _ \     _  /    __  __ \  _ \  __ `/  __/
+_  /|  / _  __/   ____/ /_  __  / _  ____/_  _, _/   _/_____/     / /___  / /_/ /  / / /(__  )/ /_/ /  / /  __/     / /___  _  / / /  __/ /_/ // /_  
+/_/ |_/  /_/      /____/ /_/ /_/  /_/     /_/ |_|                 \____/  \____//_/ /_//____/ \____//_/  \___/      \____/  /_/ /_/\___/\__,_/ \__/   )";
                                                                                                                                                                    
     std::wcout << "\n\n";
-    std::wcout << "                                                                                                                                                                               By: Nerostav Kuznetsov\n";
+    std::wcout << "                                                                                                                                         By: Nerostav Kuznetsov\n";
     COLOR_RED();
-    std::wcout << L"[!] CTRL + CLICK to follow the link                                                        \n";
-    std::wcout << L"[!] Steam:   https://steamcommunity.com/profiles/76561198304587027                          \n";
-    std::wcout << L"[!] Insta:   https://instagram.com/nrstv_kuznetsov                                           \n";
-    std::wcout << L"[!] Github:  https://github.com/NerostavKuznetsov/NFSHPRConsoleBasicCheat                     \n";
-    std::wcout << L"[!] Youtub:  https://youtube.com/@Kuzntsv-666                                                  \n";
+    std::wcout << L"[!] CTRL + CLICK to follow the link                                                       \n";
+	std::wcout << L"                                                                                           \n";
+    std::wcout << L"[!] Github:  https://github.com/NerostavKuznetsov/NFSHPRConsoleBasicCheat                   \n";
+    std::wcout << L"[!] Steam:   https://steamcommunity.com/profiles/76561198304587027                           \n";                                          
+    std::wcout << L"[!] Youtub:  https://youtube.com/@Kuzntsv-666                                                 \n";
     COLOR_GREEN();
     std::wcout << L" \n";
     std::wcout << L"╔═══════════════════════════════════════╗\n";
@@ -185,19 +184,16 @@ int main()
         {
         case '1':
             system("cls");
-            FunctionInfiniteBoost(hProcess);
+            InfiniteBoost(hProcess);
             break;
         case'2':
             system("cls");
-            FunctionRacerWeaponsHack(hProcess);
+            RacerWeaponsHack(hProcess);
 			break;
 		case'3':
 			system("cls");
-			FunctionPoliceWeaponsHack(hProcess);
+			PoliceWeaponsHack(hProcess);
 			break;
-
-
-
         case 'z':
             system("cls");
             COLOR_RED();

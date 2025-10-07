@@ -2,7 +2,7 @@
 
 static void Banner()
 {
-std::wcout << R"(
+	std::wcout << R"(
 ________      ____________       __________           ________                   _____ 
 ____  _/_________  __/__(_)_________(_)_  /_____      ___  __ )____________________  /_
  __  / __  __ \_  /_ __  /__  __ \_  /_  __/  _ \     __  __  |  __ \  __ \_  ___/  __/
@@ -10,30 +10,38 @@ __/ /  _  / / /  __/ _  / _  / / /  / / /_ /  __/     _  /_/ // /_/ / /_/ /(__  
 /___/  /_/ /_//_/    /_/  /_/ /_//_/  \__/ \___/      /_____/ \____/\____//____/ \__/   )";
 }
 
-void FunctionInfiniteBoost(HANDLE hProcess)
+void InfiniteBoost(HANDLE hProcess)
 {
-	system("cls");	
+	system("cls");
 	CONSOLE_CURSOR_INFO Cursor = { 1 };
 	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &Cursor);
-
 	COLOR_GREEN();
 	Banner();
 
-	uintptr_t Instruction_Address = 0x1402BB332;  
+	uintptr_t Nitrous_Address = modBaseAddr + 0x01276650; // Base + 01276650
+	uintptr_t Nitrous_Offset = 0x5031C;
+	uintptr_t FirstPointer = 0;
+
+	uintptr_t Instruction_Address = 0x1402BB332;
 	BYTE OriginalBytes[] = { 0xF3, 0x0F, 0x5C, 0xC8 };
 	BYTE NOP_Bytes[4];
 	BYTE CurrentValue[4] = { 0 };
 
-	if(!ReadProcessMemory(hProcess, (LPCVOID)Instruction_Address, CurrentValue, sizeof(CurrentValue), nullptr))
+	if (ReadProcessMemory(hProcess, (LPCVOID)(Nitrous_Address), &FirstPointer, sizeof(FirstPointer), nullptr))
+	{
+		Nitrous_Address = FirstPointer + Nitrous_Offset;
+	}
+
+	if (!ReadProcessMemory(hProcess, (LPCVOID)Instruction_Address, CurrentValue, sizeof(CurrentValue), nullptr))
 	{
 		COLOR_RED();
 		std::wcout << L"\n\n[!] Failed to read at memory address";
 		Sleep(1666);
-		return;	
+		return;
 	}
 
+	// true - disabled, false - enabled
 	bool Status = (CurrentValue[0] == OriginalBytes[0] && CurrentValue[1] == OriginalBytes[1] && CurrentValue[2] == OriginalBytes[2] && CurrentValue[3] == OriginalBytes[3]);
-	 
 	std::fill(std::begin(NOP_Bytes), std::end(NOP_Bytes), 0x90);
 
 	COLOR_RED();
@@ -44,11 +52,14 @@ void FunctionInfiniteBoost(HANDLE hProcess)
 	{
 		if (GetAsyncKeyState(VK_INSERT) & 1)
 		{
-			if (Status)
+			if (Status) 
 			{
 				WriteProcessMemory(hProcess, (LPVOID)Instruction_Address, NOP_Bytes, sizeof(NOP_Bytes), nullptr);
 				COLOR_GREEN();
 				std::wcout << L"[*] Infinite Boost has been successfully enabled\n";
+
+				float NitrousValue = 100.0f;
+				WriteProcessMemory(hProcess, (LPVOID)Nitrous_Address, &NitrousValue, sizeof(NitrousValue), nullptr);
 			}
 			else
 			{
@@ -56,8 +67,19 @@ void FunctionInfiniteBoost(HANDLE hProcess)
 				COLOR_GREEN();
 				std::wcout << L"[*] Infinite Boost has been successfully disabled\n";
 			}
+
 			Status = !Status;
+
+			Sleep(666);
+			system("cls");
+
+			COLOR_GREEN();
+			Banner();
+			COLOR_RED();
+			std::wcout << L"\n\n[!] Infinite Boost is " << (Status ? "disabled\n" : "enabled\n");
+			std::wcout << L"[!] Press INSERT to toggle Infinite Boost or ESC to return to the main menu...\n";
 		}
+
 		if (GetAsyncKeyState(VK_ESCAPE) & 1)
 		{
 			return;

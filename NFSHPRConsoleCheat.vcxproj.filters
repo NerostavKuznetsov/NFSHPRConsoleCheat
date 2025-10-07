@@ -10,7 +10,7 @@
     <ClCompile Include="Source\Main.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Infinite Boost\InfinteBoost.cpp">
+    <ClCompile Include="InfiniteBoost\InfinteBoost.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
@@ -18,7 +18,7 @@
     <ClInclude Include="Source\Includes.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Infinite Boost\InfiniteBoost.h">
+    <ClInclude Include="InfiniteBoost\InfiniteBoost.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
     <ClInclude Include="PoliceWeaponsHack\PoliceWeaponsHack.h">
