@@ -16,7 +16,6 @@
     <ClCompile Include="GodMode\GodMode.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="LICENSE" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\Includes.h">
