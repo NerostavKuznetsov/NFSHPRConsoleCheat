@@ -34,7 +34,7 @@ _  /|  / _  __/   ____/ /_  __  / _  ____/_  _, _/   _/_____/     / /___  / /_/ 
     std::wcout << "                                                                                                                                         By: Nerostav Kuznetsov\n";
     COLOR_RED();
     std::wcout << L"[!] CTRL + CLICK to follow the link                                                        \n";
-    std::wcout << L"[!] Github:  https://github.com/NerostavKuznetsov/NFSHPRConsoleBasicCheat                   \n";
+    std::wcout << L"[!] Github:  https://github.com/NerostavKuznetsov/NFSHPRConsoleCheat                        \n";
     std::wcout << L"[!] Steam:   https://steamcommunity.com/profiles/76561198304587027                           \n";                                          
     std::wcout << L"[!] Youtub:  https://youtube.com/@Kuzntsv-666                                                 \n";
     COLOR_GREEN();
@@ -53,7 +53,7 @@ _  /|  / _  __/   ____/ /_  __  / _  ____/_  _, _/   _/_____/     / /___  / /_/ 
     std::wcout << L"║ (9)  ➡️  *                            ║\n";
     std::wcout << L"║ (z)  ➡️  Exit                         ║\n";
 	std::wcout << L"╠═══════════════════════════════════════╣\n";
-    std::wcout << L"║ Need For Speed Hot Porsuit Remastered ║\n";
+    std::wcout << L"║ Need For Speed Hot Pursuit Remastered ║\n";
     std::wcout << L"╚═══════════════════════════════════════╝\n";
 }
 
