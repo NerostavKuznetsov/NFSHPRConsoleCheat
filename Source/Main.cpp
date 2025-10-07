@@ -13,8 +13,8 @@
 * 
 */
 
-#include "../RacerWeaponsHack/RacerWeaponsHack.h"
 #include "../PoliceWeaponsHack/PoliceWeaponsHack.h"
+#include "../RacerWeaponsHack/RacerWeaponsHack.h"
 #include "../InfiniteBoost/InfiniteBoost.h"
 #include "../GodMode/GodMode.h"
 
