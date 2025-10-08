@@ -1,6 +1,6 @@
 ﻿/*
 * 
-* NFSHPR - NK Cheats / NFSHPR - Console Basic Cheat
+* NFSHPR - NK Cheats / NFSHPR - Console  Cheat
 *
 * |-------------------------------------|
 * | [!] Status/Aviso/Info - RED         |
@@ -17,7 +17,6 @@
 #include "../RacerWeaponsHack/RacerWeaponsHack.h"
 #include "../InfiniteBoost/InfiniteBoost.h"
 #include "../GodMode/GodMode.h"
-
 
 void ShowMenu()
 {
@@ -168,14 +167,14 @@ int main()
         {
             COLOR_RED();
             std::wcout << L"\n[!] Empty option\n";
-            Sleep(1666);
+            Sleep(666);
             continue; 
         }
         else if (input.length() > 1)
         {
             COLOR_RED();
             std::wcout << L"\n[!] Invalid option. Please enter a single digit or 'z' to exit\n";
-            Sleep(1666);
+            Sleep(666);
             continue; 
         }
 
