@@ -1,6 +1,6 @@
 ﻿/*
 * 
-* NFSHPR - NK Cheats / NFSHPR - Console  Cheat
+* NFSHPR - NK Cheats / NFSHPR - Console Cheat
 *
 * |-------------------------------------|
 * | [!] Status/Aviso/Info - RED         |
@@ -44,7 +44,7 @@ _  /|  / _  __/   ____/ /_  __  / _  ____/_  _, _/   _/_____/     / /___  / /_/ 
     std::wcout << L"║ (1)  ➡️  Infinite Boost               ║\n";
     std::wcout << L"║ (2)  ➡️  Racer Weapons Hack           ║\n";
     std::wcout << L"║ (3)  ➡️  Police Weapons Hack          ║\n";
-    std::wcout << L"║ (4)  ➡️  God Mode                     ║\n";
+    std::wcout << L"║ (4)  ➡️  God Mode                     ║\n"; // PENDING
     std::wcout << L"║ (5)  ➡️  *                            ║\n";
     std::wcout << L"║ (6)  ➡️  *                            ║\n";
     std::wcout << L"║ (7)  ➡️  *                            ║\n";
@@ -63,19 +63,19 @@ DWORD GetProcessIdByName(const std::wstring& processName)
 
     if (hSnapshot != INVALID_HANDLE_VALUE)
     {
-        PROCESSENTRY32 PE;
-        PE.dwSize = sizeof(PROCESSENTRY32);
+        PROCESSENTRY32 PE32;
+        PE32.dwSize = sizeof(PROCESSENTRY32);
 
-        if (Process32FirstW(hSnapshot, &PE))
+        if (Process32FirstW(hSnapshot, &PE32))
         {
             do
             {
-                if (processName == PE.szExeFile)
+                if (processName == PE32.szExeFile)
                 {
-                    processID = PE.th32ProcessID;
+                    processID = PE32.th32ProcessID;
                     break;
                 }
-            } while (Process32NextW(hSnapshot, &PE));
+            } while (Process32NextW(hSnapshot, &PE32));
         }
         CloseHandle(hSnapshot);
     }

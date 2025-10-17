@@ -2,44 +2,86 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="RacerWeaponsHack\RacerWeaponsHack.cpp">
-      <Filter>Arquivos de Origem</Filter>
+      <Filter>Cpp%27s</Filter>
     </ClCompile>
     <ClCompile Include="PoliceWeaponsHack\PoliceWeaponsHack.cpp">
-      <Filter>Arquivos de Origem</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Main.cpp">
-      <Filter>Arquivos de Origem</Filter>
+      <Filter>Cpp%27s</Filter>
     </ClCompile>
     <ClCompile Include="InfiniteBoost\InfinteBoost.cpp">
-      <Filter>Arquivos de Origem</Filter>
+      <Filter>Cpp%27s</Filter>
     </ClCompile>
     <ClCompile Include="GodMode\GodMode.cpp">
-      <Filter>Arquivos de Origem</Filter>
+      <Filter>Cpp%27s</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Main.cpp">
+      <Filter>Cpp%27s</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GodMode\GodMode.h">
+      <Filter>Header%27s</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Includes.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
+      <Filter>Header%27s</Filter>
     </ClInclude>
     <ClInclude Include="InfiniteBoost\InfiniteBoost.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
+      <Filter>Header%27s</Filter>
     </ClInclude>
     <ClInclude Include="PoliceWeaponsHack\PoliceWeaponsHack.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
+      <Filter>Header%27s</Filter>
     </ClInclude>
     <ClInclude Include="RacerWeaponsHack\RacerWeaponsHack.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
-    </ClInclude>
-    <ClInclude Include="GodMode\GodMode.h">
-      <Filter>Arquivos de Cabeçalho</Filter>
+      <Filter>Header%27s</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Arquivos de Origem">
-      <UniqueIdentifier>{bef0b06e-d0a6-462c-86a9-6e09b78ee450}</UniqueIdentifier>
+    <None Include=".gitattributes">
+      <Filter>GitHub</Filter>
+    </None>
+    <None Include=".gitignore">
+      <Filter>GitHub</Filter>
+    </None>
+    <None Include="LICENSE">
+      <Filter>GitHub</Filter>
+    </None>
+    <None Include="README.md">
+      <Filter>GitHub</Filter>
+    </None>
+    <None Include="Build\Intermediates\NFSHPRConsoleCheat.exe.recipe" />
+    <None Include="Build\Intermediates\NFSHPRConsoleCheat.iobj" />
+    <None Include="Build\Intermediates\NFSHPRConsoleCheat.ipdb" />
+    <None Include="Build\Intermediates\vc143.pdb" />
+    <None Include="Build\NFSHPRConsoleCheat.exe" />
+    <None Include="Build\NFSHPRConsoleCheat.pdb" />
+    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\NFSHPRConsoleCheat.lastbuildstate" />
+    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\CL.command.1.tlog" />
+    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\Cl.items.tlog" />
+    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\CL.read.1.tlog" />
+    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\CL.write.1.tlog" />
+    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\link.command.1.tlog" />
+    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\link.read.1.tlog" />
+    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\link.secondary.1.tlog" />
+    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\link.write.1.tlog" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Cpp%27s">
+      <UniqueIdentifier>{f7c1871b-a416-4b71-a88f-d14caaf74a8a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Arquivos de Cabeçalho">
-      <UniqueIdentifier>{74a9a3c9-e8ea-4ed2-bcf3-688995035c49}</UniqueIdentifier>
+    <Filter Include="Header%27s">
+      <UniqueIdentifier>{a1d946b3-1a7e-4cee-962c-2362d7e2f566}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GitHub">
+      <UniqueIdentifier>{42b0df71-cf09-489e-bc49-3cfc82cc8500}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="Build\Intermediates\GodMode.obj" />
+    <Object Include="Build\Intermediates\InfinteBoost.obj" />
+    <Object Include="Build\Intermediates\Main.obj" />
+    <Object Include="Build\Intermediates\PoliceWeaponsHack.obj" />
+    <Object Include="Build\Intermediates\RacerWeaponsHack.obj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Build\Intermediates\NFSHPRConsoleCheat.log" />
   </ItemGroup>
 </Project>

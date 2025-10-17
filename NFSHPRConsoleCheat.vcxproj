@@ -32,6 +32,37 @@
     <ClInclude Include="RacerWeaponsHack\RacerWeaponsHack.h" />
     <ClInclude Include="Source\Includes.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include=".gitattributes" />
+    <None Include=".gitignore" />
+    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\CL.command.1.tlog" />
+    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\Cl.items.tlog" />
+    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\CL.read.1.tlog" />
+    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\CL.write.1.tlog" />
+    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\link.command.1.tlog" />
+    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\link.read.1.tlog" />
+    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\link.secondary.1.tlog" />
+    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\link.write.1.tlog" />
+    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\NFSHPRConsoleCheat.lastbuildstate" />
+    <None Include="Build\Intermediates\NFSHPRConsoleCheat.exe.recipe" />
+    <None Include="Build\Intermediates\NFSHPRConsoleCheat.iobj" />
+    <None Include="Build\Intermediates\NFSHPRConsoleCheat.ipdb" />
+    <None Include="Build\Intermediates\vc143.pdb" />
+    <None Include="Build\NFSHPRConsoleCheat.exe" />
+    <None Include="Build\NFSHPRConsoleCheat.pdb" />
+    <None Include="LICENSE" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="Build\Intermediates\GodMode.obj" />
+    <Object Include="Build\Intermediates\InfinteBoost.obj" />
+    <Object Include="Build\Intermediates\Main.obj" />
+    <Object Include="Build\Intermediates\PoliceWeaponsHack.obj" />
+    <Object Include="Build\Intermediates\RacerWeaponsHack.obj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Build\Intermediates\NFSHPRConsoleCheat.log" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -84,6 +115,14 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)Build\</OutDir>
+    <IntDir>$(SolutionDir)Build\Intermediates\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)Build\</OutDir>
+    <IntDir>$(SolutionDir)Build\Intermediates\</IntDir>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -112,10 +151,11 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
