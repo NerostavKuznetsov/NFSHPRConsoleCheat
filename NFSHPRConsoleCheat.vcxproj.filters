@@ -47,21 +47,6 @@
     <None Include="README.md">
       <Filter>GitHub</Filter>
     </None>
-    <None Include="Build\Intermediates\NFSHPRConsoleCheat.exe.recipe" />
-    <None Include="Build\Intermediates\NFSHPRConsoleCheat.iobj" />
-    <None Include="Build\Intermediates\NFSHPRConsoleCheat.ipdb" />
-    <None Include="Build\Intermediates\vc143.pdb" />
-    <None Include="Build\NFSHPRConsoleCheat.exe" />
-    <None Include="Build\NFSHPRConsoleCheat.pdb" />
-    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\NFSHPRConsoleCheat.lastbuildstate" />
-    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\CL.command.1.tlog" />
-    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\Cl.items.tlog" />
-    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\CL.read.1.tlog" />
-    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\CL.write.1.tlog" />
-    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\link.command.1.tlog" />
-    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\link.read.1.tlog" />
-    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\link.secondary.1.tlog" />
-    <None Include="Build\Intermediates\NFSHPRCo.1e1db7ef.tlog\link.write.1.tlog" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Cpp%27s">
@@ -73,15 +58,5 @@
     <Filter Include="GitHub">
       <UniqueIdentifier>{42b0df71-cf09-489e-bc49-3cfc82cc8500}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <Object Include="Build\Intermediates\GodMode.obj" />
-    <Object Include="Build\Intermediates\InfinteBoost.obj" />
-    <Object Include="Build\Intermediates\Main.obj" />
-    <Object Include="Build\Intermediates\PoliceWeaponsHack.obj" />
-    <Object Include="Build\Intermediates\RacerWeaponsHack.obj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Build\Intermediates\NFSHPRConsoleCheat.log" />
   </ItemGroup>
 </Project>
