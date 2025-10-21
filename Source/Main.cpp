@@ -21,6 +21,7 @@
 void ShowMenu()
 {
     system("cls");
+
     COLOR_GREEN();
     std::wcout << R"(
 _____   _______________________  _________________                _________                         ______          ______________             _____ 
@@ -31,11 +32,13 @@ _  /|  / _  __/   ____/ /_  __  / _  ____/_  _, _/   _/_____/     / /___  / /_/ 
                                                                                                                                                                    
     std::wcout << "\n\n";
     std::wcout << "                                                                                                                                         By: Nerostav Kuznetsov\n";
+
     COLOR_RED();
     std::wcout << L"[!] CTRL + CLICK to follow the link                                                        \n";
     std::wcout << L"[!] Github:  https://github.com/NerostavKuznetsov/NFSHPRConsoleCheat                        \n";
     std::wcout << L"[!] Steam:   https://steamcommunity.com/profiles/76561198304587027                           \n";                                          
     std::wcout << L"[!] Youtub:  https://youtube.com/@Kuzntsv-666                                                 \n";
+
     COLOR_GREEN();
     std::wcout << L" \n";
     std::wcout << L"╔═══════════════════════════════════════╗\n";
@@ -44,7 +47,7 @@ _  /|  / _  __/   ____/ /_  __  / _  ____/_  _, _/   _/_____/     / /___  / /_/ 
     std::wcout << L"║ (1)  ➡️  Infinite Boost               ║\n";
     std::wcout << L"║ (2)  ➡️  Racer Weapons Hack           ║\n";
     std::wcout << L"║ (3)  ➡️  Police Weapons Hack          ║\n";
-    std::wcout << L"║ (4)  ➡️  God Mode                     ║\n"; // PENDING
+    std::wcout << L"║ (4)  ➡️  God Mode                     ║\n"; // PENDING   
     std::wcout << L"║ (5)  ➡️  *                            ║\n";
     std::wcout << L"║ (6)  ➡️  *                            ║\n";
     std::wcout << L"║ (7)  ➡️  *                            ║\n";
@@ -63,8 +66,8 @@ DWORD GetProcessIdByName(const std::wstring& processName)
 
     if (hSnapshot != INVALID_HANDLE_VALUE)
     {
-        PROCESSENTRY32 PE32;
-        PE32.dwSize = sizeof(PROCESSENTRY32);
+        PROCESSENTRY32W PE32;
+        PE32.dwSize = sizeof(PROCESSENTRY32W);
 
         if (Process32FirstW(hSnapshot, &PE32))
         {
@@ -82,10 +85,10 @@ DWORD GetProcessIdByName(const std::wstring& processName)
     return processID;
 }
 
-uintptr_t GetModuleBaseAddress(uintptr_t ProcessID, const wchar_t* modBaseName) 
+uintptr_t GetModuleBaseAddress(uintptr_t ProcessID, const wchar_t* modBaseName)
 {
     uintptr_t baseAddress = 0;
-    HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, ProcessID);
+    HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE | TH32CS_SNAPMODULE32, (DWORD)ProcessID);
 
     if (hSnapshot != INVALID_HANDLE_VALUE)
     {
@@ -95,24 +98,25 @@ uintptr_t GetModuleBaseAddress(uintptr_t ProcessID, const wchar_t* modBaseName)
         {
             do
             {
-                if (!_wcsicmp(MEW32.szModule, modBaseName))
+                if (_wcsicmp(MEW32.szModule, modBaseName) == 0)
                 {
-                    baseAddress = (uintptr_t)(MEW32.modBaseAddr); 
+                    baseAddress = (uintptr_t)(MEW32.modBaseAddr);
                     break;
                 }
             } while (Module32NextW(hSnapshot, &MEW32));
         }
         CloseHandle(hSnapshot);
-        return baseAddress;
     }
+
+    return baseAddress;
 }
 
 uintptr_t modBaseAddr = 0; 
 
 int main()
 {
-    setlocale(LC_ALL, "PT_BR.UTF-8"); 
-    SetConsoleOutputCP(CP_UTF8); 
+    setlocale(LC_ALL, "PT_BR.UTF-8");           // Portuguese 
+    SetConsoleOutputCP(CP_UTF8);               // Emoji
     SetConsoleTitleA("NFSHPR - NK Cheats");
 
     DWORD PID = GetProcessIdByName(L"NFS11Remastered.exe");
@@ -139,9 +143,11 @@ int main()
     while (running)
     {
         ShowMenu();
+
         COLOR_RED();
         std::wcout << L"\n[!] Base address: 0x" << std::hex << modBaseAddr << L"\n";
         std::wcout << L"[!] ProcessID: " << std::dec << PID << L"\n";
+
         COLOR_YELLOW();
         std::wcout << L"[?] Enter your option (1-9 or z): ";
         std::wstring input;
@@ -186,18 +192,22 @@ int main()
             system("cls");
             InfiniteBoost(hProcess);
             break;
+
         case'2':
             system("cls");
             RacerWeaponsHack(hProcess);
 			break;
+
 		case'3':
 			system("cls");
 			PoliceWeaponsHack(hProcess);
 			break;
+
         case'4':
             system("cls");
             GodMode(hProcess);
             break;
+
         case 'z':
             system("cls");
             COLOR_RED();
