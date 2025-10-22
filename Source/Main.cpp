@@ -1,17 +1,20 @@
 ﻿/*
 * 
-* NFSHPR - NK Cheats / NFSHPR - Console Cheat
-*
-* |-------------------------------------|
-* | [!] Status/Aviso/Info - RED         |
-* | [*] Aplicado/Menu/ASCIIArt - GREEN  |    By: Nerostav "NERO" Kuznetsov
-* | [~] Esperando - YELLOW              |
-* | [?] Input - YELLOW                  |    
-* |-------------------------------------|    
-*
-* [!] Este programa é um software livre: você pode redistribuí-lo e/ou modificá-lo como quiser.
+* ╔══════════════════════════════════════════════════════════════════════════╗
+* ║ NFSHPR - Kazan Cheats / Need For Speed Hot Pursuit Remastered - Console  ║
+* ║ Cheat                                                                    ║
+* ╠══════════════════════════════════════════════════════════════════════════╣
+* ║ [!] Status/Aviso/Info  - RED                                             ║
+* ║ [*] Aplicado/Menu/ASCIIArt - GREEN     By: Nerostav "NERO" Kuznetsov     ║
+* ║ [~] Esperando - YELLOW                                                   ║
+* ║ [?] Input - YELLOW                                                       ║
+* ╠══════════════════════════════════════════════════════════════════════════╣
+* ║ [!] Este programa é um software livre: você pode redistribuí-lo e/ou     ║
+* ║     modificá-lo como quiser.                                             ║
+* ╚══════════════════════════════════════════════════════════════════════════╝
 * 
 */
+
 
 #include "../PoliceWeaponsHack/PoliceWeaponsHack.h"
 #include "../RacerWeaponsHack/RacerWeaponsHack.h"
@@ -115,8 +118,8 @@ uintptr_t modBaseAddr = 0;
 
 int main()
 {
-    setlocale(LC_ALL, "PT_BR.UTF-8");           // Portuguese 
-    SetConsoleOutputCP(CP_UTF8);               // Emoji
+    setlocale(LC_ALL, "PT_BR.UTF-8");           // ➡️ Portuguese 
+    SetConsoleOutputCP(CP_UTF8);               // ➡️ Emoji
     SetConsoleTitleA("NFSHPR - NK Cheats");
 
     DWORD PID = GetProcessIdByName(L"NFS11Remastered.exe");
