@@ -1,21 +1,17 @@
 ﻿/*
 * 
-* ╔══════════════════════════════════════════════════════════════════════════╗
-* ║ NFSHPR - Kazan Cheats / Need For Speed Hot Pursuit Remastered - Console  ║
-* ║ Cheat                                                                    ║
-* ╠══════════════════════════════════════════════════════════════════════════╣
-* ║ [!] Status/Aviso/Info  - RED                                             ║
-* ║ [*] Aplicado/Menu/ASCIIArt - GREEN     By: Nerostav "NERO" Kuznetsov     ║
-* ║ [~] Esperando - YELLOW                                                   ║
-* ║ [?] Input - YELLOW                                                       ║
-* ╠══════════════════════════════════════════════════════════════════════════╣
-* ║ [!] Este programa é um software livre: você pode redistribuí-lo e/ou     ║
-* ║     modificá-lo como quiser.                                             ║
-* ╚══════════════════════════════════════════════════════════════════════════╝
+* ╔════════════════════════════════════════════════════════════════════════════════════════════════╗
+* ║                    Need For Speed Hot Pursuit Remastered - Console Cheat                       ║                                                                                
+* ╠════════════════════════════════════════════════════════════════════════════════════════════════╣
+* ║ [!] Status/Aviso/Info  - RED                                                                   ║
+* ║ [*] Aplicado/Menu/ASCIIArt - GREEN           Made with <3 by Nerostav "NERO" Kuznetsov         ║
+* ║ [~] Esperando - YELLOW                                                                         ║
+* ║ [?] Input - YELLOW                                                                             ║
+* ╠════════════════════════════════════════════════════════════════════════════════════════════════╣
+* ║ [!] Este programa é um software livre: você pode redistribuí-lo e/ou modificá-lo como quiser.  ║                                               
+* ╚════════════════════════════════════════════════════════════════════════════════════════════════╝
 * 
 */
-
-
 #include "../PoliceWeaponsHack/PoliceWeaponsHack.h"
 #include "../RacerWeaponsHack/RacerWeaponsHack.h"
 #include "../InfiniteBoost/InfiniteBoost.h"
@@ -37,10 +33,10 @@ _  /|  / _  __/   ____/ /_  __  / _  ____/_  _, _/   _/_____/     / /___  / /_/ 
     std::wcout << "                                                                                                                                         By: Nerostav Kuznetsov\n";
 
     COLOR_RED();
-    std::wcout << L"[!] CTRL + CLICK to follow the link                                                        \n";
-    std::wcout << L"[!] Github:  https://github.com/NerostavKuznetsov/NFSHPRConsoleCheat                        \n";
-    std::wcout << L"[!] Steam:   https://steamcommunity.com/profiles/76561198304587027                           \n";                                          
-    std::wcout << L"[!] Youtub:  https://youtube.com/@Kuzntsv-666                                                 \n";
+    std::wcout << L"[!] CTRL + CLICK to follow the link                                     \n";
+    std::wcout << L"[!] Github:  https://github.com/NerostavKuznetsov/NFSHPRConsoleCheat     \n";
+    std::wcout << L"[!] Steam:   https://steamcommunity.com/profiles/76561198304587027        \n";                                          
+    std::wcout << L"[!] Youtub:  https://youtube.com/@Kuzntsv-666                              \n";
 
     COLOR_GREEN();
     std::wcout << L" \n";
@@ -67,7 +63,7 @@ DWORD GetProcessIdByName(const std::wstring& processName)
     DWORD processID = 0;
     HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
 
-    if (hSnapshot != INVALID_HANDLE_VALUE)
+    if (hSnapshot != INVALID_HANDLE_VALUE) 
     {
         PROCESSENTRY32W PE32;
         PE32.dwSize = sizeof(PROCESSENTRY32W);
@@ -118,9 +114,9 @@ uintptr_t modBaseAddr = 0;
 
 int main()
 {
-    setlocale(LC_ALL, "PT_BR.UTF-8");           // ➡️ Portuguese 
+    setlocale(LC_ALL, "PT_BR.UTF-8");           // ➡️ Portuguese(Brazil) 
     SetConsoleOutputCP(CP_UTF8);               // ➡️ Emoji
-    SetConsoleTitleA("NFSHPR - NK Cheats");
+    SetConsoleTitleA("NFSHPR - Kazan Cheats");
 
     DWORD PID = GetProcessIdByName(L"NFS11Remastered.exe");
 
